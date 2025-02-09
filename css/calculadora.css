@@ -1,0 +1,15 @@
+form{
+    border: 22px double red;
+    font-size: 18pt;
+    font-family: verdana;
+    padding: 30px;
+    width: 400px;
+    
+}
+
+.texto{
+    border: 1px solid #000000;
+    font-size: 18pt;
+    background-color: #ffff00;
+}
+

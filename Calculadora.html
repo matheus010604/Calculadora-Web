@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="css/calculadora.css">
+</head>
+<body>
+    
+    <form>
+        <p>
+            <b>Valor 1:</b>
+            <input class="texto" type="number" name="valor1" id="valor1" size="50">
+            
+        </p>
+
+        <p>
+            <b>Valor 2:</b>
+            <input class="texto" type="number" name="valor2" id="valor2">
+        </p>
+
+        <p>
+            <b>Opções:</b>
+            <br>
+            <input type="radio" name="Opções"  id="soma" value="soma">Soma<br>
+            <input type="radio" name="Opções" id="sub" value="sub">Subtração <br>
+            <input type="radio" name="Opções" id="mult" value="mult">Multiplicação <br>
+            <input type="radio" name="Opções" id="div" value="div">Divisão <br>
+        </p>
+
+        <p>
+            <b>Resultado:</b> <br>
+            <input class="texto" type="number" id="resultado" readonly> <br>
+            <input type="button" value="calcular" id="calcular">
+        </p>
+    </form>
+
+    <script>
+        document.getElementById("calcular").addEventListener("click", function () {
+            var num1 = parseFloat(document.getElementById("valor1").value);
+            var num2 = parseFloat(document.getElementById("valor2").value);
+            var opcao = document.querySelector('input[name="Opções"]:checked').value;
+            let resultado;
+            switch (opcao) {
+                case "soma":
+                    resultado = num1 + num2;
+                    break;
+                
+                case "sub":
+                    resultado = num1 - num2;
+                    break;
+
+                case "mult":
+                    resultado = num1 * num2;
+                    break;
+                case "div":
+                    resultado = num1 / num2;
+                default:
+                    break;
+            }
+
+            document.getElementById("resultado").value = resultado
+        })
+    </script>
+</body>
+</html>
